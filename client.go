@@ -25,4 +25,12 @@ func main() {
 		log.Fatalf("Error while calling SayHello: %s", err)
 	}
 	log.Printf("Response from server: %s", response.Body)
+	msg := chat.Message{
+		Body: "Hello from client",
+	}
+	resp, err := c.BroadCastMessage(context.Background(), &msg)
+	if err != nil {
+		log.Fatalf("Error while calling BroadCastMessage: %s", err)
+	}
+	log.Printf("Response from server: %s", resp.Body)
 }

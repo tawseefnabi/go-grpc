@@ -8,4 +8,5 @@ message Message{
 
 service ChatService{
     rpc SayHello(Message) returns (Message){}
+    rpc BroadCastMessage(Message) returns(Message){}
 }

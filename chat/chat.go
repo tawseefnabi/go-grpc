@@ -14,3 +14,8 @@ func (s *Server) SayHello(ctx context.Context, message *Message) (*Message, erro
 
 	return &Message{Body: "Hello from server!"}, nil
 }
+
+func (s *Server) BroadCastMessage(ctx context.Context, in *Message) (*Message, error) {
+	log.Printf("Broadcasting new message from a client: %s", in.Body)
+	return &Message{Body: "Broadcasted message!"}, nil
+}
